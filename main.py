@@ -117,12 +117,13 @@ def search_website(state: AgentState):
         with sync_playwright() as p:
 
             browser = p.chromium.launch(
-                headless=False
-            )
+    headless=True,
+    executable_path="/usr/bin/chromium"
+)
 
             page = browser.new_page()
 
-            website_url = "http://localhost:8000"
+            website_url = f"file://{os.path.join(os.path.dirname(__file__), 'mock_site', 'index.html')}"
 
             if retry_count > 0:
 
