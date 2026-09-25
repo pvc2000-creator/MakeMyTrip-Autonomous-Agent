@@ -1,0 +1,7 @@
+streamlit
+openai
+langgraph
+playwright
+pydantic
+python-dotenv
+pandas
